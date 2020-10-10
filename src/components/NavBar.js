@@ -15,65 +15,51 @@ import LogOutIcon from "../assets/icons/LogOutIcon";
 import "../firebase";
 import firebase from "firebase";
 
-class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dropDown1Opened: false,
-      dropDown2Opened: false,
-    };
+function NavBar(props) {
+  const [dropDown1Opened, setDropDown1Opened] = useState(false);
+  const [dropDown2Opened, setDropDown2Opened] = useState(false);
 
-    this.toggleDropDown1 = this.toggleDropDown1.bind(this);
-    this.toggleDropDown2 = this.toggleDropDown2.bind(this);
+  function toggleDropDown1() {
+    setDropDown1Opened(!dropDown1Opened);
+    setDropDown2Opened(false);
   }
 
-  toggleDropDown1() {
-    this.setState((state) => ({
-      dropDown1Opened: !state.dropDown1Opened,
-      dropDown2Opened: false,
-    }));
+  function toggleDropDown2() {
+    setDropDown1Opened(false);
+    setDropDown2Opened(!dropDown2Opened);
   }
 
-  toggleDropDown2() {
-    this.setState((state) => ({
-      dropDown1Opened: false,
-      dropDown2Opened: !state.dropDown2Opened,
-    }));
-  }
-
-  render() {
-    return (
-      <>
-        <div className="navbar">
-          <div className="navbar_container_1">
-            <div className="navbar_name"></div>
-          </div>
-          <Container2 home={this.props.home} explore={this.props.explore} />
-          <div className="navbar_container_3">
-            <div className="navbar_container_3_column">
-              <button
-                className="navbar_round_icon_button_1"
-                onClick={this.toggleDropDown2}
-              >
-                <ArrowDropDownIcon />
-              </button>
-            </div>
-            <div className="navbar_container_3_column">
-              <button
-                className="navbar_round_icon_button_1"
-                onClick={this.toggleDropDown1}
-              >
-                <AddIcon />
-              </button>
-            </div>
-            <ProfileButton />
-          </div>
+  return (
+    <>
+      <div className="navbar">
+        <div className="navbar_container_1">
+          <div className="navbar_name"></div>
         </div>
-        <DropDown1 show={this.state.dropDown1Opened} />
-        <DropDown2 show={this.state.dropDown2Opened} />
-      </>
-    );
-  }
+        <Container2 home={props.home} explore={props.explore} />
+        <div className="navbar_container_3">
+          <div className="navbar_container_3_column">
+            <button
+              className="navbar_round_icon_button_1"
+              onClick={toggleDropDown2}
+            >
+              <ArrowDropDownIcon />
+            </button>
+          </div>
+          <div className="navbar_container_3_column">
+            <button
+              className="navbar_round_icon_button_1"
+              onClick={toggleDropDown1}
+            >
+              <AddIcon />
+            </button>
+          </div>
+          <ProfileButton />
+        </div>
+      </div>
+      <DropDown1 show={dropDown1Opened} />
+      <DropDown2 show={dropDown2Opened} />
+    </>
+  );
 }
 
 function DropDown1(props) {
