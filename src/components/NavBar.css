@@ -1,0 +1,259 @@
+.navbar {
+  display: table;
+  height: 60px;
+  width: 100%;
+  /* background-color: whitesmoke; */
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 0.25rem 0px rgba(143, 143, 143, 1);
+}
+.navbar_container_1 {
+  display: table-cell;
+  width: 15vw;
+  max-width: 15rem;
+}
+
+.navbar_name {
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+  height: 100%;
+}
+
+.navbar_container_2 {
+  display: table-cell;
+  /* min-width: 15rem; */
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+
+.navbar_menu {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20rem;
+  max-width: 30vw;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.navbar_icon_selected {
+  vertical-align: middle;
+  display: table-cell;
+  fill: #007bfc;
+  height: 2.5rem;
+}
+
+.navbar_icon_not_selected {
+  vertical-align: middle;
+  display: table-cell;
+  fill: gray;
+  height: 2.5rem;
+}
+
+.navbar_icon_button {
+  display: table-cell;
+  height: 56px;
+  width: 100%;
+  background-color: transparent;
+  outline-width: 0rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.navbar_icon_button:hover {
+  background-color: whitesmoke;
+}
+
+.navbar_menu_child {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.navbar_container_3 {
+  display: table-cell;
+  width: 15rem;
+  vertical-align: middle;
+}
+
+html {
+  font-size: 15px;
+}
+
+.navbar_container_3_column {
+  display: table-cell;
+  vertical-align: middle;
+  float: right;
+}
+
+.navbar_round_icon_button_1 {
+  /* display: table-cell; */
+  outline-width: 0rem;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  vertical-align: middle;
+
+  margin: 0.5rem;
+}
+
+.navbar_round_icon_button_1:hover {
+  background-color: #dcdcdc;
+}
+
+.navbar_round_icon_button_2 {
+  /* display: table-cell; */
+  outline-width: 0rem;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  margin: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar_round_icon_button_2:hover {
+  background-color: #dcdcdc;
+}
+
+.AddIcon {
+  vertical-align: middle;
+  fill: gray;
+  height: 64%;
+  width: 100%;
+}
+
+.ArrowDropDownIcon {
+  vertical-align: middle;
+  fill: gray;
+  height: 64%;
+  width: 100%;
+}
+
+.navbar_dropdown1 {
+  position: fixed;
+  top: 5rem;
+  right: 4.5rem;
+  border-radius: 1.5rem;
+  width: 25rem;
+  max-width: 50vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  vertical-align: top;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+  -moz-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+  box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+}
+
+.navbar_dropdown2 {
+  position: fixed;
+  top: 5rem;
+  right: 0.5rem;
+  border-radius: 1.5rem;
+  width: 25rem;
+  max-width: 50vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  vertical-align: top;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+  -moz-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+  box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+}
+
+.navbar_dropdown_button {
+  display: table;
+  margin-right: auto;
+  padding-left: 1rem;
+  /* width: 24rem; */
+  width: calc(100% - 1rem);
+  height: 4rem;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+  border-radius: 1rem;
+  vertical-align: middle;
+}
+
+.navbar_dropdown_button:hover {
+  background-color: whitesmoke;
+}
+
+.navbar_dropdown_button_icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 4rem;
+}
+
+.navbar_dropdown_button_title {
+  display: table-cell;
+  vertical-align: middle;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.AddCollectionIcon {
+  fill: gray;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+}
+
+.SubjectIcon {
+  fill: gray;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+}
+
+.StarIcon {
+  fill: #fcba03;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+}
+
+.SettingsIcon {
+  fill: gray;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+}
+
+.LogOutIcon {
+  fill: gray;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}

@@ -1,0 +1,73 @@
+html {
+  font-size: 15px;
+}
+
+body {
+  overflow-x: auto;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  font-family: Roboto, Helvetica, Arial, sans-serif;  
+}
+
+.message {
+  max-width: 30rem;
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.message h2 {
+  font-size: 5rem;
+}
+
+.message h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.message p {
+  margin: 1rem 0 1.5rem;
+  font-size: 1.5rem;
+  color: rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.button_1 {
+  outline-width: 0rem;
+  background-color: #007BFC;
+  border-radius: 1rem;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-style: solid;
+  border-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  width: 20rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.button_1:hover {
+  -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(143,143,143,1);
+  -moz-box-shadow: 0px 0px 0.5rem 0px rgba(143,143,143,1);
+  box-shadow: 0px 0px 0.5rem 0px rgba(143,143,143,1);
+}
+
+p {
+  color:  rgba(0,0,0,0.6);
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+span {
+    font-size: 4rem;
+}

@@ -1,0 +1,63 @@
+html {
+  font-size: 15px;
+}
+
+.background_image {
+  /* 나만의 표준, 다른 곳에서도 비슷한 form 이 필요하면 이거 그대로 사용하기 */
+  margin-top: 4.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 1rem);
+  max-width: 75rem;
+  height: 25rem;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile_image {
+  height: 12rem;
+  width: 12rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -6rem;
+  border-radius: 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.name {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.container {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 1rem);
+  max-width: 75rem;
+  height: fit-content;
+  overflow: auto;
+}
+
+.me_navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  height: 4rem;
+  width: 100%;
+  background-color: red;
+}
+
+.space_h_100 {
+  height: 100rem;
+}
