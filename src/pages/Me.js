@@ -26,7 +26,6 @@ function Me() {
       if (firebase.auth().currentUser.emailVerified) {
         return (
           <>
-            <NavBar />
             <div>
               <div
                 className="background_image"
@@ -49,6 +48,7 @@ function Me() {
               <div className="me_navbar"></div>
               <div className="space_h_100"></div>
             </div>
+            <NavBar />
           </>
         );
       } else {

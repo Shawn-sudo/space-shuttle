@@ -14,6 +14,9 @@ import TermsOfUse from "../pages/Termsofuse";
 import Me from "../pages/Me";
 
 function App() {
+  //1. Check if "checking user state" is finished
+  //2. Check if logged in
+  //3. Check if profile setting finished
   return (
     <BrowserRouter>
       <Switch>
