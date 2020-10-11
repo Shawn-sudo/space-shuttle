@@ -1,6 +1,6 @@
 * feat: new function
 * fix: fix bug
-* edit: edit function
+* edit: edit a function
 * style: change code format, semi-colon, etc.
 * refactor: refactor production code
 
