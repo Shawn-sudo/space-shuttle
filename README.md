@@ -17,7 +17,6 @@ Note
 ---
 
 * source: here
-* [result][website]
 ---
 * Frontend: React
 * Backend: Firebase (for fast deployment)
@@ -25,9 +24,6 @@ Note
 * used create-react-app
 * deleted src/firebase.js for security
   - something like key, database url are located in firebase.js
-
-
-[website]: https://atrable.com
 
 
 
