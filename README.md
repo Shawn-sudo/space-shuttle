@@ -1,6 +1,6 @@
-* feat: new function
-* fix: fix bug
+* new: new function
 * edit: edit a function
+* fix: fix bug
 * style: change code format, semi-colon, etc.
 * etc: files in src (source) folder not changed: build, deploy, etc.
 
