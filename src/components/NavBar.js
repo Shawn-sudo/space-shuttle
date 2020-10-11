@@ -51,7 +51,7 @@ function NavBar(props) {
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown1}
+              onClick={toggleDropDown2}
             >
               <ArrowDropDownIcon />
             </button>
@@ -59,7 +59,7 @@ function NavBar(props) {
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown2}
+              onClick={toggleDropDown1}
             >
               <AddIcon />
             </button>
@@ -74,14 +74,13 @@ function NavBar(props) {
           style={{
             bottom: 10,
             right: 10,
-            backgroundColor: "#dcdcdc",
             borderRadius: "1.5rem",
           }}
         >
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown1}
+              onClick={toggleDropDown2}
             >
               <ArrowDropDownIcon />
             </button>
@@ -89,7 +88,7 @@ function NavBar(props) {
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown2}
+              onClick={toggleDropDown1}
             >
               <AddIcon />
             </button>
@@ -103,28 +102,65 @@ function NavBar(props) {
 
 function DropDown1(props) {
   if (props.show === true) {
-    return (
-      <>
-        <div className="navbar_dropdown1">
-          <Link to="/new/collection" style={{ textDecoration: "none" }}>
-            <div className="navbar_dropdown_button">
-              <div className="navbar_dropdown_button_icon">
-                <AddCollectionIcon />
+    if (window.innerWidth > 750) {
+      return (
+        <>
+          <div
+            className="navbar_dropdown"
+            style={{
+              top: "5rem",
+              right: "4.5rem",
+            }}
+          >
+            <Link to="/new/collection" style={{ textDecoration: "none" }}>
+              <div className="navbar_dropdown_button">
+                <div className="navbar_dropdown_button_icon">
+                  <AddCollectionIcon />
+                </div>
+                <div className="navbar_dropdown_button_title">Collection</div>
               </div>
-              <div className="navbar_dropdown_button_title">Collection</div>
-            </div>
-          </Link>
-          <Link to="/new/story" style={{ textDecoration: "none" }}>
-            <div className="navbar_dropdown_button">
-              <div className="navbar_dropdown_button_icon">
-                <SubjectIcon />
+            </Link>
+            <Link to="/new/story" style={{ textDecoration: "none" }}>
+              <div className="navbar_dropdown_button">
+                <div className="navbar_dropdown_button_icon">
+                  <SubjectIcon />
+                </div>
+                <div className="navbar_dropdown_button_title">Story</div>
               </div>
-              <div className="navbar_dropdown_button_title">Story</div>
-            </div>
-          </Link>
-        </div>
-      </>
-    );
+            </Link>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div
+            className="navbar_dropdown"
+            style={{
+              bottom: "5rem",
+              right: "5.5rem",
+            }}
+          >
+            <Link to="/new/collection" style={{ textDecoration: "none" }}>
+              <div className="navbar_dropdown_button">
+                <div className="navbar_dropdown_button_icon">
+                  <AddCollectionIcon />
+                </div>
+                <div className="navbar_dropdown_button_title">Collection</div>
+              </div>
+            </Link>
+            <Link to="/new/story" style={{ textDecoration: "none" }}>
+              <div className="navbar_dropdown_button">
+                <div className="navbar_dropdown_button_icon">
+                  <SubjectIcon />
+                </div>
+                <div className="navbar_dropdown_button_title">Story</div>
+              </div>
+            </Link>
+          </div>
+        </>
+      );
+    }
   } else {
     return <div></div>;
   }
@@ -132,19 +168,47 @@ function DropDown1(props) {
 
 function DropDown2(props) {
   if (props.show === true) {
-    return (
-      <div className="navbar_dropdown2">
-        <Link to="/us/review" style={{ textDecoration: "none" }}>
-          <div className="navbar_dropdown_button">
-            <div className="navbar_dropdown_button_icon">
-              <StarIcon />
+    if (window.innerWidth > 750) {
+      return (
+        <div
+          className="navbar_dropdown"
+          style={{
+            top: "5rem",
+            right: "0.5rem",
+          }}
+        >
+          <Link to="/us/review" style={{ textDecoration: "none" }}>
+            <div className="navbar_dropdown_button">
+              <div className="navbar_dropdown_button_icon">
+                <StarIcon />
+              </div>
+              <div className="navbar_dropdown_button_title">Rate us</div>
             </div>
-            <div className="navbar_dropdown_button_title">Rate us</div>
-          </div>
-        </Link>
-        <LogOutButton />
-      </div>
-    );
+          </Link>
+          <LogOutButton />
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className="navbar_dropdown"
+          style={{
+            bottom: "5rem",
+            right: "1.5rem",
+          }}
+        >
+          <Link to="/us/review" style={{ textDecoration: "none" }}>
+            <div className="navbar_dropdown_button">
+              <div className="navbar_dropdown_button_icon">
+                <StarIcon />
+              </div>
+              <div className="navbar_dropdown_button_title">Rate us</div>
+            </div>
+          </Link>
+          <LogOutButton />
+        </div>
+      );
+    }
   } else {
     return <div></div>;
   }

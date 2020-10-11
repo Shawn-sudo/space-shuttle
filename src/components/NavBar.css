@@ -135,10 +135,8 @@ html {
   width: 100%;
 }
 
-.navbar_dropdown1 {
+.navbar_dropdown {
   position: fixed;
-  top: 5rem;
-  right: 4.5rem;
   border-radius: 1.5rem;
   width: 25rem;
   max-width: 50vw;
@@ -153,10 +151,8 @@ html {
   box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
 }
 
-.navbar_dropdown2 {
+/* .navbar_dropdown2 {
   position: fixed;
-  top: 5rem;
-  right: 0.5rem;
   border-radius: 1.5rem;
   width: 25rem;
   max-width: 50vw;
@@ -169,7 +165,7 @@ html {
   -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
   -moz-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
   box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
-}
+} */
 
 .navbar_dropdown_button {
   display: table;
