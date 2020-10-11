@@ -2,7 +2,7 @@
 * fix: fix bug
 * edit: edit a function
 * style: change code format, semi-colon, etc.
-* refactor: refactor production code
+* etc: files in src (source) folder not changed: build, deploy, etc.
 
 src/firebase.js not included
 ===
