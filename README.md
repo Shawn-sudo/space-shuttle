@@ -2,7 +2,7 @@ feat: new function
 fix: fixed bug
 docs: edited documents
 style: changed code format, semi-colon, etc.
-refactor: refactored production code 프로덕션 코드 리팩터링
+refactor: refactored production code
 
 src/firebase.js not included
 ===
