@@ -48,4 +48,3 @@ History
     + Started to make "mypage"
   - November
   - December
-
