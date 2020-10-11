@@ -1,3 +1,9 @@
+* feat: new function
+* fix: fix bug
+* edit: edit a function
+* style: change code format, semi-colon, etc.
+* refactor: refactor production code
+
 src/firebase.js not included
 ===
 * something like key, database url are located in firebase.js
@@ -11,7 +17,6 @@ Note
 ---
 
 * source: here
-* [result][website]
 ---
 * Frontend: React
 * Backend: Firebase (for fast deployment)
@@ -19,9 +24,6 @@ Note
 * used create-react-app
 * deleted src/firebase.js for security
   - something like key, database url are located in firebase.js
-
-
-[website]: https://atrable.com
 
 
 
@@ -46,4 +48,3 @@ History
     + Started to make "mypage"
   - November
   - December
-
