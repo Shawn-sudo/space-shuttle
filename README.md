@@ -1,8 +1,8 @@
-feat: new function
-fix: fixed bug
-docs: edited documents
-style: changed code format, semi-colon, etc.
-refactor: refactored production code
+* feat: new function
+* fix: fixed bug
+* docs: edited documents
+* style: changed code format, semi-colon, etc.
+* refactor: refactored production code
 
 src/firebase.js not included
 ===
