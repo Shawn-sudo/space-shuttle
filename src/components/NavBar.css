@@ -2,7 +2,6 @@
   display: table;
   height: 60px;
   width: 100%;
-  /* background-color: whitesmoke; */
   position: fixed;
   top: 0;
   backdrop-filter: blur(10px);
@@ -12,8 +11,19 @@
 }
 .navbar_container_1 {
   display: table-cell;
-  width: 15vw;
-  max-width: 15rem;
+  width: 12.5vw;
+}
+
+.navbar_container_2 {
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+.navbar_container_3 {
+  display: table-cell;
+  width: 10vw;
+  vertical-align: middle;
 }
 
 .navbar_name {
@@ -23,20 +33,11 @@
   height: 100%;
 }
 
-.navbar_container_2 {
-  display: table-cell;
-  /* min-width: 15rem; */
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: middle;
-}
-
 .navbar_menu {
   display: table;
   margin-left: auto;
   margin-right: auto;
   width: 20rem;
-  max-width: 30vw;
   height: 100%;
   vertical-align: middle;
 }
@@ -75,12 +76,6 @@
   vertical-align: middle;
 }
 
-.navbar_container_3 {
-  display: table-cell;
-  width: 15rem;
-  vertical-align: middle;
-}
-
 html {
   font-size: 15px;
 }
@@ -92,7 +87,6 @@ html {
 }
 
 .navbar_round_icon_button_1 {
-  /* display: table-cell; */
   outline-width: 0rem;
   background-color: whitesmoke;
   border: none;
@@ -110,7 +104,6 @@ html {
 }
 
 .navbar_round_icon_button_2 {
-  /* display: table-cell; */
   outline-width: 0rem;
   background-color: whitesmoke;
   border: none;
@@ -182,7 +175,6 @@ html {
   display: table;
   margin-right: auto;
   padding-left: 1rem;
-  /* width: 24rem; */
   width: calc(100% - 1rem);
   height: 4rem;
   background-color: white;
@@ -256,4 +248,12 @@ html {
 
 button::-moz-focus-inner {
   border: 0;
+}
+
+.navbar_action_buttons {
+  position: fixed;
+  height: 4rem;
+  width: 12.5rem;
+  /* top: 0;
+  right: 0; */
 }

@@ -36,11 +36,22 @@ function NavBar(props) {
           <div className="navbar_name"></div>
         </div>
         <Container2 home={props.home} explore={props.explore} />
-        <div className="navbar_container_3">
+        <div className="navbar_container_3"></div>
+      </div>
+      <NavBarActionButtons />
+      <DropDown1 show={dropDown1Opened} />
+      <DropDown2 show={dropDown2Opened} />
+    </>
+  );
+
+  function NavBarActionButtons() {
+    if (window.innerWidth > 750) {
+      return (
+        <div className="navbar_action_buttons" style={{ top: 0, right: 0 }}>
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown2}
+              onClick={toggleDropDown1}
             >
               <ArrowDropDownIcon />
             </button>
@@ -48,18 +59,46 @@ function NavBar(props) {
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown1}
+              onClick={toggleDropDown2}
             >
               <AddIcon />
             </button>
           </div>
           <ProfileButton />
         </div>
-      </div>
-      <DropDown1 show={dropDown1Opened} />
-      <DropDown2 show={dropDown2Opened} />
-    </>
-  );
+      );
+    } else {
+      return (
+        <div
+          className="navbar_action_buttons"
+          style={{
+            bottom: 10,
+            right: 10,
+            backgroundColor: "#dcdcdc",
+            borderRadius: "1.5rem",
+          }}
+        >
+          <div className="navbar_container_3_column">
+            <button
+              className="navbar_round_icon_button_1"
+              onClick={toggleDropDown1}
+            >
+              <ArrowDropDownIcon />
+            </button>
+          </div>
+          <div className="navbar_container_3_column">
+            <button
+              className="navbar_round_icon_button_1"
+              onClick={toggleDropDown2}
+            >
+              <AddIcon />
+            </button>
+          </div>
+          <ProfileButton />
+        </div>
+      );
+    }
+  }
 }
 
 function DropDown1(props) {
