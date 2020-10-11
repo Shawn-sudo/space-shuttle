@@ -36,7 +36,7 @@ function Me() {
               <div
                 className="profile_image"
                 style={{
-                  backgroundImage: "url(https://picsum.photos/100/100)",
+                  backgroundImage: "url(https://picsum.photos/300/300)",
                 }}
               />
               <div className="container">

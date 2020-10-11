@@ -14,9 +14,7 @@ import TermsOfUse from "../pages/Termsofuse";
 import Me from "../pages/Me";
 
 function App() {
-  //1. Check if "checking user state" is finished
-  //2. Check if logged in
-  //3. Check if profile setting finished
+
   return (
     <BrowserRouter>
       <Switch>
@@ -27,7 +25,6 @@ function App() {
         <Route exact path="/new/story" component={NewStory} />
         <Route exact path="/us/review" component={ReviewUs} />
         <Route exact path="/us/todo" component={UsTodo} />
-        {/* <Route exact path="/about" component={AboutUs} /> */}
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/termsofuse" component={TermsOfUse} />
         <Route exact path="/me" component={Me} />

@@ -98,6 +98,48 @@ function NavBar(props) {
       );
     }
   }
+
+  function ProfileButton() {
+    const [init, setInit] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+    useEffect(() => {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          setLoggedIn(true);
+        } else {
+          setLoggedIn(false);
+        }
+        setInit(true);
+      });
+    }, []);
+
+    if (init) {
+      if (loggedIn) {
+        if (firebase.auth().currentUser.emailVerified) {
+          return (
+            <div className="navbar_container_3_column">
+              <Link to="/me">
+                <button
+                  className="navbar_round_icon_button_2"
+                  style={{
+                    backgroundImage: "url(https://picsum.photos/300/300)",
+                  }}
+                >
+                  {/* 유저의 프로필 사진 */}
+                </button>
+              </Link>
+            </div>
+          );
+        } else {
+          return <></>;
+        }
+      } else {
+        return <></>;
+      }
+    } else {
+      return <></>;
+    }
+  }
 }
 
 function DropDown1(props) {
@@ -238,48 +280,6 @@ function LogOutButton() {
           <div className="navbar_dropdown_button_title">Log out</div>
         </div>
       );
-    } else {
-      return <></>;
-    }
-  } else {
-    return <></>;
-  }
-}
-
-function ProfileButton() {
-  const [init, setInit] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setLoggedIn(true);
-      } else {
-        setLoggedIn(false);
-      }
-      setInit(true);
-    });
-  }, []);
-
-  if (init) {
-    if (loggedIn) {
-      if (firebase.auth().currentUser.emailVerified) {
-        return (
-          <div className="navbar_container_3_column">
-            <Link to="/me">
-              <button
-                className="navbar_round_icon_button_2"
-                style={{
-                  backgroundImage: "url(https://picsum.photos/100/100)",
-                }}
-              >
-                {/* 유저의 프로필 사진 */}
-              </button>
-            </Link>
-          </div>
-        );
-      } else {
-        return <></>;
-      }
     } else {
       return <></>;
     }
