@@ -1,5 +1,5 @@
 * new: new function
-* edit: edit a function
+* edit: edit a function (similar with "fix")
 * fix: fix bug
 * style: change code format, semi-colon, etc.
 * etc: files in src (source) folder not changed: build, deploy, etc.
