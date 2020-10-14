@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "../../components/NavBar";
 import firebase from "firebase";
 import "../../firebase";
 import Loading from "../../components/Loading";
@@ -22,11 +21,10 @@ function NewCollection() {
   if (init) {
     if (loggedIn) {
       if (firebase.auth().currentUser.emailVerified) {
-        return <NavBar />;
+        return <></>;
       } else {
         return (
           <>
-            <NavBar />
             <VerifyEmail />
           </>
         );

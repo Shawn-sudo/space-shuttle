@@ -1,11 +1,9 @@
 import React from "react";
-import NavBar from "../../components/NavBar";
 import "./Settings.css";
 
 function Settings() {
   return (
     <>
-      <NavBar />
       <h1
         style={{
           marginTop: "8rem",

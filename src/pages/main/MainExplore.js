@@ -4,7 +4,6 @@ import "../../firebase";
 import "./MainExplore.css";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
-import NavBar from "../../components/NavBar";
 import VerifyEmail from "../../components/VerifyEmail";
 
 function MainExplore() {
@@ -26,7 +25,6 @@ function MainExplore() {
       if (firebase.auth().currentUser.emailVerified) {
         return (
           <>
-            <NavBar explore={true} />
             <div></div>
           </>
         );
@@ -34,8 +32,6 @@ function MainExplore() {
         return (
           <>
             <VerifyEmail />
-
-            <NavBar explore={true} />
           </>
         );
       }

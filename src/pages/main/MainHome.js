@@ -4,7 +4,6 @@ import "../../firebase";
 import "./MainHome.css";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
-import NavBar from "../../components/NavBar";
 import VerifyEmail from "../../components/VerifyEmail";
 
 function MainHome() {
@@ -26,14 +25,12 @@ function MainHome() {
       if (firebase.auth().currentUser.emailVerified) {
         return (
           <>
-            <NavBar home={true} />
             <div></div>
           </>
         );
       } else {
         return (
           <>
-            <NavBar home={true} />
             <VerifyEmail />
           </>
         );

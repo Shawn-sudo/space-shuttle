@@ -6,7 +6,6 @@ import "../firebase";
 import firebase from "firebase";
 import { Redirect } from "react-router-dom";
 import Loading from "../components/Loading";
-import NavBar from "../components/NavBar";
 
 function Home() {
   const [init, setInit] = useState(false);
@@ -29,7 +28,6 @@ function Home() {
       if (window.innerHeight / window.innerWidth < 1) {
         return (
           <>
-            <NavBar />
             <div className="row">
               <div className="column_left">
                 <div className="welcome">Built for you</div>
@@ -48,7 +46,6 @@ function Home() {
       } else {
         return (
           <>
-            <NavBar />
             <div className="row">
               <div className="column_right_for_mobile">
                 <div className="welcome_for_mobile">Welcome</div>

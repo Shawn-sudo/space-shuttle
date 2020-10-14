@@ -4,7 +4,6 @@ import "../firebase";
 import "./Me.css";
 import Loading from "../components/Loading";
 import LoginToUse from "../components/LoginToUse";
-import NavBar from "../components/NavBar";
 import VerifyEmail from "../components/VerifyEmail";
 
 function Me() {
@@ -48,13 +47,11 @@ function Me() {
               <div className="me_navbar"></div>
               <div className="space_h_100"></div>
             </div>
-            <NavBar />
           </>
         );
       } else {
         return (
           <>
-            <NavBar />
             <VerifyEmail />
           </>
         );

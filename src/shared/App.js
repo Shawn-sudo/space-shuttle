@@ -12,11 +12,12 @@ import UsTodo from "../pages/us/UsTodo";
 // import AboutUs from "../pages/us/AboutUs";
 import TermsOfUse from "../pages/Termsofuse";
 import Me from "../pages/Me";
+import NavBar from "../components/NavBar";
 
 function App() {
-
   return (
     <BrowserRouter>
+      <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={MainHome} />

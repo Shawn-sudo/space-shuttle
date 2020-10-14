@@ -1,25 +1,8 @@
-:root {
-    -webkit-tap-highlight-color: transparent;
-}
-
-html {
-    font-size: 15px;
-}
-
-body {
-    overflow-x: auto;
-    overflow-y: auto;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    background-color: whitesmoke;
-}
-
 .row {
     display: table;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    /* padding-top: 3rem; */
-    background-color: whitesmoke;
 }
 
 .row_2 {

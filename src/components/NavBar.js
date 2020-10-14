@@ -92,11 +92,12 @@ function DropDownButtons() {
 
   if (dropDown1Opened) {
     return (
-      <>
+      <div>
         <div className="navbar_container_3_column">
           <button
             className="navbar_round_icon_button_1"
             onClick={() => {
+              setDropDown1Opened(false);
               setDropDown2Opened(!dropDown2Opened);
             }}
           >
@@ -108,22 +109,24 @@ function DropDownButtons() {
             className="navbar_round_icon_button_1"
             onClick={() => {
               setDropDown1Opened(false);
+              setDropDown2Opened(false);
             }}
           >
             <AddIcon />
           </button>
         </div>
         <DropDown1 />
-      </>
+      </div>
     );
   } else {
     if (dropDown2Opened) {
       return (
-        <>
+        <div>
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
               onClick={() => {
+                setDropDown1Opened(false);
                 setDropDown2Opened(false);
               }}
             >
@@ -135,21 +138,23 @@ function DropDownButtons() {
               className="navbar_round_icon_button_1"
               onClick={() => {
                 setDropDown1Opened(!dropDown1Opened);
+                setDropDown2Opened(false);
               }}
             >
               <AddIcon />
             </button>
           </div>
           <DropDown2 />
-        </>
+        </div>
       );
     } else {
       return (
-        <>
+        <div>
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
               onClick={() => {
+                setDropDown1Opened(false);
                 setDropDown2Opened(!dropDown2Opened);
               }}
             >
@@ -161,125 +166,33 @@ function DropDownButtons() {
               className="navbar_round_icon_button_1"
               onClick={() => {
                 setDropDown1Opened(!dropDown1Opened);
+                setDropDown2Opened(false);
               }}
             >
               <AddIcon />
             </button>
           </div>
-        </>
+        </div>
       );
     }
   }
 }
 
-// function DropDown1Button() {
-//   const [dropDown1Opened, setDropDown1Opened] = useState(false);
-
-//   if (dropDown1Opened) {
-//     return (
-//       <>
-//         <div className="navbar_container_3_column">
-//           <button
-//             className="navbar_round_icon_button_1"
-//             onClick={() => {
-//               setDropDown1Opened(!dropDown1Opened);
-//             }}
-//           >
-//             <AddIcon />
-//           </button>
-//         </div>
-//         <DropDown1 />
-//       </>
-//     );
-//   } else {
-//     return (
-//       <div className="navbar_container_3_column">
-//         <button
-//           className="navbar_round_icon_button_1"
-//           onClick={() => {
-//             setDropDown1Opened(!dropDown1Opened);
-//           }}
-//         >
-//           <AddIcon />
-//         </button>
-//       </div>
-//     );
-//   }
-// }
-
-// function DropDown2Button() {
-//   const [dropDown2Opened, setDropDown2Opened] = useState(false);
-
-//   if (dropDown2Opened) {
-//     return (
-//       <>
-//         <div className="navbar_container_3_column">
-//           <button
-//             className="navbar_round_icon_button_1"
-//             onClick={() => {
-//               setDropDown2Opened(!dropDown2Opened);
-//             }}
-//           >
-//             <ArrowDropDownIcon />
-//           </button>
-//         </div>
-//         <DropDown2 />
-//       </>
-//     );
-//   } else {
-//     return (
-//       <div className="navbar_container_3_column">
-//         <button
-//           className="navbar_round_icon_button_1"
-//           onClick={() => {
-//             setDropDown2Opened(!dropDown2Opened);
-//           }}
-//         >
-//           <ArrowDropDownIcon />
-//         </button>
-//       </div>
-//     );
-//   }
-// }
-
 function ProfileButton() {
-  const [init, setInit] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setLoggedIn(true);
-      } else {
-        setLoggedIn(false);
-      }
-      setInit(true);
-    });
-  }, []);
-
-  if (init) {
-    if (loggedIn) {
-      if (firebase.auth().currentUser.emailVerified) {
-        return (
-          <div className="navbar_container_3_column">
-            <Link to="/me">
-              <button
-                className="navbar_round_icon_button_2"
-                style={{
-                  backgroundImage: "url(https://picsum.photos/300/300)",
-                }}
-              ></button>
-            </Link>
-          </div>
-        );
-      } else {
-        return <></>;
-      }
-    } else {
-      return <></>;
-    }
-  } else {
-    return <></>;
-  }
+  // if profile url is not null
+  return (
+    <div className="navbar_container_3_column">
+      <Link to="/me">
+        <button
+          className="navbar_round_icon_button_2"
+          style={{
+            backgroundImage: "url(https://picsum.photos/300/300)",
+          }}
+        ></button>
+      </Link>
+    </div>
+  );
+  // else: return <></>
 }
 
 function DropDown1() {

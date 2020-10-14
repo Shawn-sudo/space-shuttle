@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
-import NavBar from "../../components/NavBar";
 import UsLeftMenu from "../../components/UsLeftMenu";
 import "./ReviewUs.css";
 import firebase from "firebase";
@@ -20,12 +19,12 @@ function ReviewUs() {
       setInit(true);
     });
   }, []);
+
   if (init) {
     if (loggedIn) {
       return (
         <>
           <UsLeftMenu currentPage={1} />
-          <NavBar />
         </>
       );
     } else {

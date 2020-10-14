@@ -1,7 +1,6 @@
 import React from "react";
 import "./404.css";
 import { Redirect } from "react-router-dom";
-import NavBar from "../components/NavBar";
 
 class ErrorPageNotFound extends React.Component {
   state = {
@@ -29,7 +28,6 @@ class ErrorPageNotFound extends React.Component {
             <style media="screen"></style>
           </head>
           <body>
-            <NavBar currentPage={0} />
             <div className="message">
               <span role="img" aria-label="">
                 🤔
