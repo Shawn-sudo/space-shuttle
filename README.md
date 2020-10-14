@@ -15,7 +15,7 @@ Built for you
 ~~This is a platform where you can share your travel stories. You can view traveler's stories, follow travelers, and share your travel story.~~
 
 
-This is a platform for sharing stories, not information.
+This is a platform for sharing stories(, not information).
 
 Note
 ---
