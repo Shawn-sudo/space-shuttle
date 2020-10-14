@@ -7,6 +7,7 @@
 src/firebase.js not included
 ===
 * something like key, database url are located in firebase.js
+* this file is needed when communicating with the firebase server
 
 Built for you 
 ===
