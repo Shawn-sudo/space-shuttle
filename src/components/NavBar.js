@@ -16,19 +16,6 @@ import "../firebase";
 import firebase from "firebase";
 
 function NavBar(props) {
-  const [dropDown1Opened, setDropDown1Opened] = useState(false);
-  const [dropDown2Opened, setDropDown2Opened] = useState(false);
-
-  function toggleDropDown1() {
-    setDropDown1Opened(!dropDown1Opened);
-    setDropDown2Opened(false);
-  }
-
-  function toggleDropDown2() {
-    setDropDown1Opened(false);
-    setDropDown2Opened(!dropDown2Opened);
-  }
-
   return (
     <>
       <div className="navbar">
@@ -39,19 +26,106 @@ function NavBar(props) {
         <div className="navbar_container_3"></div>
       </div>
       <NavBarActionButtons />
-      <DropDown1 show={dropDown1Opened} />
-      <DropDown2 show={dropDown2Opened} />
     </>
   );
+}
 
-  function NavBarActionButtons() {
-    if (window.innerWidth > 750) {
+function Container2(props) {
+  const [showHome, setShowHome] = useState(props.home);
+  const [showExplore, setShowExplore] = useState(props.explore);
+
+  return (
+    <div className="navbar_container_2">
+      <div className="navbar_menu">
+        <div className="navbar_menu_child">
+          <Link
+            to="/home"
+            onClick={() => {
+              setShowHome(true);
+              setShowExplore(false);
+            }}
+          >
+            <button className="navbar_icon_button">
+              <HomeButton on={showHome} />
+            </button>
+          </Link>
+        </div>
+        <div className="navbar_menu_child">
+          <Link
+            to="/explore"
+            onClick={() => {
+              setShowHome(false);
+              setShowExplore(true);
+            }}
+          >
+            <button className="navbar_icon_button">
+              <ExploreButton on={showExplore} />
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NavBarActionButtons() {
+  if (window.innerWidth > 750) {
+    return (
+      <div className="navbar_action_buttons" style={{ top: 0, right: 0 }}>
+        <DropDownButtons />
+        <ProfileButton />
+      </div>
+    );
+  } else {
+    return (
+      <div className="navbar_action_buttons" style={{ bottom: 10, right: 10 }}>
+        <DropDownButtons />
+        <ProfileButton />
+      </div>
+    );
+  }
+}
+
+function DropDownButtons() {
+  const [dropDown1Opened, setDropDown1Opened] = useState(false);
+  const [dropDown2Opened, setDropDown2Opened] = useState(false);
+
+  if (dropDown1Opened) {
+    return (
+      <>
+        <div className="navbar_container_3_column">
+          <button
+            className="navbar_round_icon_button_1"
+            onClick={() => {
+              setDropDown2Opened(!dropDown2Opened);
+            }}
+          >
+            <ArrowDropDownIcon />
+          </button>
+        </div>
+        <div className="navbar_container_3_column">
+          <button
+            className="navbar_round_icon_button_1"
+            onClick={() => {
+              setDropDown1Opened(false);
+            }}
+          >
+            <AddIcon />
+          </button>
+        </div>
+        <DropDown1 />
+      </>
+    );
+  } else {
+    if (dropDown2Opened) {
       return (
-        <div className="navbar_action_buttons" style={{ top: 0, right: 0 }}>
+        <>
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown2}
+              onClick={() => {
+                setDropDown2Opened(false);
+              }}
             >
               <ArrowDropDownIcon />
             </button>
@@ -59,28 +133,25 @@ function NavBar(props) {
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown1}
+              onClick={() => {
+                setDropDown1Opened(!dropDown1Opened);
+              }}
             >
               <AddIcon />
             </button>
           </div>
-          <ProfileButton />
-        </div>
+          <DropDown2 />
+        </>
       );
     } else {
       return (
-        <div
-          className="navbar_action_buttons"
-          style={{
-            bottom: 10,
-            right: 10,
-            borderRadius: "1.5rem",
-          }}
-        >
+        <>
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown2}
+              onClick={() => {
+                setDropDown2Opened(!dropDown2Opened);
+              }}
             >
               <ArrowDropDownIcon />
             </button>
@@ -88,171 +159,232 @@ function NavBar(props) {
           <div className="navbar_container_3_column">
             <button
               className="navbar_round_icon_button_1"
-              onClick={toggleDropDown1}
+              onClick={() => {
+                setDropDown1Opened(!dropDown1Opened);
+              }}
             >
               <AddIcon />
             </button>
           </div>
-          <ProfileButton />
-        </div>
+        </>
       );
     }
   }
+}
 
-  function ProfileButton() {
-    const [init, setInit] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false);
-    useEffect(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          setLoggedIn(true);
-        } else {
-          setLoggedIn(false);
-        }
-        setInit(true);
-      });
-    }, []);
+// function DropDown1Button() {
+//   const [dropDown1Opened, setDropDown1Opened] = useState(false);
 
-    if (init) {
-      if (loggedIn) {
-        if (firebase.auth().currentUser.emailVerified) {
-          return (
-            <div className="navbar_container_3_column">
-              <Link to="/me">
-                <button
-                  className="navbar_round_icon_button_2"
-                  style={{
-                    backgroundImage: "url(https://picsum.photos/300/300)",
-                  }}
-                >
-                  {/* 유저의 프로필 사진 */}
-                </button>
-              </Link>
-            </div>
-          );
-        } else {
-          return <></>;
-        }
+//   if (dropDown1Opened) {
+//     return (
+//       <>
+//         <div className="navbar_container_3_column">
+//           <button
+//             className="navbar_round_icon_button_1"
+//             onClick={() => {
+//               setDropDown1Opened(!dropDown1Opened);
+//             }}
+//           >
+//             <AddIcon />
+//           </button>
+//         </div>
+//         <DropDown1 />
+//       </>
+//     );
+//   } else {
+//     return (
+//       <div className="navbar_container_3_column">
+//         <button
+//           className="navbar_round_icon_button_1"
+//           onClick={() => {
+//             setDropDown1Opened(!dropDown1Opened);
+//           }}
+//         >
+//           <AddIcon />
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+
+// function DropDown2Button() {
+//   const [dropDown2Opened, setDropDown2Opened] = useState(false);
+
+//   if (dropDown2Opened) {
+//     return (
+//       <>
+//         <div className="navbar_container_3_column">
+//           <button
+//             className="navbar_round_icon_button_1"
+//             onClick={() => {
+//               setDropDown2Opened(!dropDown2Opened);
+//             }}
+//           >
+//             <ArrowDropDownIcon />
+//           </button>
+//         </div>
+//         <DropDown2 />
+//       </>
+//     );
+//   } else {
+//     return (
+//       <div className="navbar_container_3_column">
+//         <button
+//           className="navbar_round_icon_button_1"
+//           onClick={() => {
+//             setDropDown2Opened(!dropDown2Opened);
+//           }}
+//         >
+//           <ArrowDropDownIcon />
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+
+function ProfileButton() {
+  const [init, setInit] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+      setInit(true);
+    });
+  }, []);
+
+  if (init) {
+    if (loggedIn) {
+      if (firebase.auth().currentUser.emailVerified) {
+        return (
+          <div className="navbar_container_3_column">
+            <Link to="/me">
+              <button
+                className="navbar_round_icon_button_2"
+                style={{
+                  backgroundImage: "url(https://picsum.photos/300/300)",
+                }}
+              ></button>
+            </Link>
+          </div>
+        );
       } else {
         return <></>;
       }
     } else {
       return <></>;
     }
-  }
-}
-
-function DropDown1(props) {
-  if (props.show === true) {
-    if (window.innerWidth > 750) {
-      return (
-        <>
-          <div
-            className="navbar_dropdown"
-            style={{
-              top: "5rem",
-              right: "4.5rem",
-            }}
-          >
-            <Link to="/new/collection" style={{ textDecoration: "none" }}>
-              <div className="navbar_dropdown_button">
-                <div className="navbar_dropdown_button_icon">
-                  <AddCollectionIcon />
-                </div>
-                <div className="navbar_dropdown_button_title">Collection</div>
-              </div>
-            </Link>
-            <Link to="/new/story" style={{ textDecoration: "none" }}>
-              <div className="navbar_dropdown_button">
-                <div className="navbar_dropdown_button_icon">
-                  <SubjectIcon />
-                </div>
-                <div className="navbar_dropdown_button_title">Story</div>
-              </div>
-            </Link>
-          </div>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <div
-            className="navbar_dropdown"
-            style={{
-              bottom: "5rem",
-              right: "5.5rem",
-            }}
-          >
-            <Link to="/new/collection" style={{ textDecoration: "none" }}>
-              <div className="navbar_dropdown_button">
-                <div className="navbar_dropdown_button_icon">
-                  <AddCollectionIcon />
-                </div>
-                <div className="navbar_dropdown_button_title">Collection</div>
-              </div>
-            </Link>
-            <Link to="/new/story" style={{ textDecoration: "none" }}>
-              <div className="navbar_dropdown_button">
-                <div className="navbar_dropdown_button_icon">
-                  <SubjectIcon />
-                </div>
-                <div className="navbar_dropdown_button_title">Story</div>
-              </div>
-            </Link>
-          </div>
-        </>
-      );
-    }
   } else {
-    return <div></div>;
+    return <></>;
   }
 }
 
-function DropDown2(props) {
-  if (props.show === true) {
-    if (window.innerWidth > 750) {
-      return (
+function DropDown1() {
+  if (window.innerWidth > 750) {
+    return (
+      <>
         <div
           className="navbar_dropdown"
           style={{
             top: "5rem",
-            right: "0.5rem",
+            right: "4.5rem",
           }}
         >
-          <Link to="/us/review" style={{ textDecoration: "none" }}>
+          <Link to="/new/collection" style={{ textDecoration: "none" }}>
             <div className="navbar_dropdown_button">
               <div className="navbar_dropdown_button_icon">
-                <StarIcon />
+                <AddCollectionIcon />
               </div>
-              <div className="navbar_dropdown_button_title">Rate us</div>
+              <div className="navbar_dropdown_button_title">Collection</div>
             </div>
           </Link>
-          <LogOutButton />
+          <Link to="/new/story" style={{ textDecoration: "none" }}>
+            <div className="navbar_dropdown_button">
+              <div className="navbar_dropdown_button_icon">
+                <SubjectIcon />
+              </div>
+              <div className="navbar_dropdown_button_title">Story</div>
+            </div>
+          </Link>
         </div>
-      );
-    } else {
-      return (
+      </>
+    );
+  } else {
+    return (
+      <>
         <div
           className="navbar_dropdown"
           style={{
             bottom: "5rem",
-            right: "1.5rem",
+            right: "5.5rem",
           }}
         >
-          <Link to="/us/review" style={{ textDecoration: "none" }}>
+          <Link to="/new/collection" style={{ textDecoration: "none" }}>
             <div className="navbar_dropdown_button">
               <div className="navbar_dropdown_button_icon">
-                <StarIcon />
+                <AddCollectionIcon />
               </div>
-              <div className="navbar_dropdown_button_title">Rate us</div>
+              <div className="navbar_dropdown_button_title">Collection</div>
             </div>
           </Link>
-          <LogOutButton />
+          <Link to="/new/story" style={{ textDecoration: "none" }}>
+            <div className="navbar_dropdown_button">
+              <div className="navbar_dropdown_button_icon">
+                <SubjectIcon />
+              </div>
+              <div className="navbar_dropdown_button_title">Story</div>
+            </div>
+          </Link>
         </div>
-      );
-    }
+      </>
+    );
+  }
+}
+
+function DropDown2() {
+  if (window.innerWidth > 750) {
+    return (
+      <div
+        className="navbar_dropdown"
+        style={{
+          top: "5rem",
+          right: "0.5rem",
+        }}
+      >
+        <Link to="/us/review" style={{ textDecoration: "none" }}>
+          <div className="navbar_dropdown_button">
+            <div className="navbar_dropdown_button_icon">
+              <StarIcon />
+            </div>
+            <div className="navbar_dropdown_button_title">Rate us</div>
+          </div>
+        </Link>
+        <LogOutButton />
+      </div>
+    );
   } else {
-    return <div></div>;
+    return (
+      <div
+        className="navbar_dropdown"
+        style={{
+          bottom: "5rem",
+          right: "1.5rem",
+        }}
+      >
+        <Link to="/us/review" style={{ textDecoration: "none" }}>
+          <div className="navbar_dropdown_button">
+            <div className="navbar_dropdown_button_icon">
+              <StarIcon />
+            </div>
+            <div className="navbar_dropdown_button_title">Rate us</div>
+          </div>
+        </Link>
+        <LogOutButton />
+      </div>
+    );
   }
 }
 
@@ -291,29 +423,6 @@ function LogOutButton() {
 async function Logout() {
   await firebase.auth().signOut();
   window.location.reload();
-}
-
-function Container2(props) {
-  return (
-    <div className="navbar_container_2">
-      <div className="navbar_menu">
-        <div className="navbar_menu_child">
-          <Link to="/home">
-            <button className="navbar_icon_button">
-              <HomeButton on={props.home} />
-            </button>
-          </Link>
-        </div>
-        <div className="navbar_menu_child">
-          <Link to="/explore">
-            <button className="navbar_icon_button">
-              <ExploreButton on={props.explore} />
-            </button>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 function HomeButton(props) {

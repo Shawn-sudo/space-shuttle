@@ -3,7 +3,6 @@ import AddIcon from "../assets/icons/AddIcon";
 import ArrowDropDownIcon from "../assets/icons/ArrowDropDownIcon";
 import ExploreOutlinedIcon from "../assets/icons/ExploreOutlinedIcon";
 import HomeOutlinedIcon from "../assets/icons/HomeOutlinedIcon";
-import NavBar from "./NavBar";
 import "./NavBar.css";
 
 function Loading() {
