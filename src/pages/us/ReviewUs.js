@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
-import UsLeftMenu from "../../components/UsLeftMenu";
 import "./ReviewUs.css";
 import firebase from "firebase";
 import "../../firebase";
@@ -22,11 +21,7 @@ function ReviewUs() {
 
   if (init) {
     if (loggedIn) {
-      return (
-        <>
-          <UsLeftMenu currentPage={1} />
-        </>
-      );
+      return <></>;
     } else {
       return <LoginToUse />;
     }

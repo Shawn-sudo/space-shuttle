@@ -1,0 +1,5 @@
+.leftmenu {
+    height: calc(100% - 5rem);
+    width: 20vw;
+    background-color: red;
+}

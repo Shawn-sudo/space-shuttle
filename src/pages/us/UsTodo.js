@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
-import UsLeftMenu from "../../components/UsLeftMenu";
 import "./UsTodo.css";
 import firebase from "firebase";
 import "../../firebase";
@@ -24,7 +23,6 @@ function UsTodo() {
     if (loggedIn) {
       return (
         <>
-          <UsLeftMenu currentPage={0} />
         </>
       );
     } else {

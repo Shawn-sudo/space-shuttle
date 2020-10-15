@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import "../pages/Home";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import AddIcon from "../assets/icons/AddIcon";
 import ArrowDropDownIcon from "../assets/icons/ArrowDropDownIcon";
 import AddCollectionIcon from "../assets/icons/AddCollectionIcon";
@@ -33,6 +33,13 @@ function NavBar(props) {
 function Container2(props) {
   const [showHome, setShowHome] = useState(props.home);
   const [showExplore, setShowExplore] = useState(props.explore);
+
+  useHistory().listen((location) => {
+    if (location.pathname !== "/home" && location.pathname !== "/explore") {
+      setShowHome(false);
+      setShowExplore(false);
+    }
+  });
 
   return (
     <div className="navbar_container_2">
@@ -90,6 +97,11 @@ function DropDownButtons() {
   const [dropDown1Opened, setDropDown1Opened] = useState(false);
   const [dropDown2Opened, setDropDown2Opened] = useState(false);
 
+  useHistory().listen(() => {
+    setDropDown1Opened(false);
+    setDropDown2Opened(false);
+  });
+
   if (dropDown1Opened) {
     return (
       <div>
@@ -115,7 +127,12 @@ function DropDownButtons() {
             <AddIcon />
           </button>
         </div>
-        <DropDown1 />
+        <DropDown1
+          onblur={() => {
+            setDropDown1Opened(false);
+            setDropDown2Opened(false);
+          }}
+        />
       </div>
     );
   } else {
@@ -144,7 +161,7 @@ function DropDownButtons() {
               <AddIcon />
             </button>
           </div>
-          <DropDown2 />
+          <DropDown2 onblur={() => {}} />
         </div>
       );
     } else {
@@ -195,7 +212,7 @@ function ProfileButton() {
   // else: return <></>
 }
 
-function DropDown1() {
+function DropDown1(props) {
   if (window.innerWidth > 750) {
     return (
       <>
@@ -205,6 +222,7 @@ function DropDown1() {
             top: "5rem",
             right: "4.5rem",
           }}
+          onBlur={props.onblur}
         >
           <Link to="/new/collection" style={{ textDecoration: "none" }}>
             <div className="navbar_dropdown_button">
