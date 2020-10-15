@@ -72,10 +72,6 @@
   background-color: whitesmoke;
 }
 
-.navbar_icon_button:active {
-  background-color: transparent;
-}
-
 .navbar_menu_child {
   display: table-cell;
   vertical-align: middle;
@@ -105,10 +101,6 @@ html {
 
 .navbar_round_icon_button_1:hover {
   background-color: #dcdcdc;
-}
-
-.navbar_round_icon_button_1:active {
-  background-color: whitesmoke;
 }
 
 .navbar_round_icon_button_2 {
@@ -190,10 +182,6 @@ html {
 
 .navbar_dropdown_button:hover {
   background-color: whitesmoke;
-}
-
-.navbar_dropdown_button:active {
-  background-color: white;
 }
 
 .navbar_dropdown_button_icon {

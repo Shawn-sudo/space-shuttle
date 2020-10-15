@@ -357,7 +357,7 @@ async function Logout() {
 }
 
 function HomeButton(props) {
-  if (props.on === true) {
+  if (props.on === true || window.location.pathname === "/home") {
     return (
       <HomeFilledIcon
         style={{
@@ -385,7 +385,7 @@ function HomeButton(props) {
 }
 
 function ExploreButton(props) {
-  if (props.on === true) {
+  if (props.on === true || window.location.pathname === "/explore") {
     return (
       <ExploreFilledIcon
         style={{
