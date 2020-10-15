@@ -335,7 +335,7 @@ function LogOutButton() {
 
 async function Logout() {
   await firebase.auth().signOut();
-  window.location.reload();
+  // window.location.reload();
 }
 
 function HomeButton(props) {
