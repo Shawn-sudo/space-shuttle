@@ -1,0 +1,41 @@
+.content_container {
+  width: calc(100% - 1rem);
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+}
+
+.content {
+  height: 40rem;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.content_top {
+  display: table;
+  height: 4rem;
+}
+
+.content_top_left {
+  display: table-cell;
+  height: 100%;
+  background-color: red;
+}
+
+.content_top_right {
+  display: table-cell;
+  height: 100%;
+  background-color: teal;
+}
+
+.content_top_profile_image {
+  display: table-cell;
+}
+
+.content_top_profile_name {
+  display: table-cell;
+}

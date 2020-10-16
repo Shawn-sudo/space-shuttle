@@ -25,7 +25,20 @@ function MainHome() {
       if (firebase.auth().currentUser.emailVerified) {
         return (
           <>
-            <div></div>
+            <div className="content_container">
+              <div className="content">
+                <div className="content_top">
+                  <div className="content_top_left">
+                    <div className="content_top_profile_image">aaa</div>
+                    <div className="content_top_profile_name">bbb</div>
+                  </div>
+                  <div className="content_top_right">ccc</div>
+                </div>
+              </div>
+              <div className="content"></div>
+              <div className="content"></div>
+              <div className="content"></div>
+            </div>
           </>
         );
       } else {
