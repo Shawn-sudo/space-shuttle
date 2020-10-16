@@ -7,7 +7,6 @@
 }
 
 .content {
-  height: 40rem;
   width: 100%;
   border-radius: 2rem;
   background-color: white;
@@ -23,19 +22,70 @@
 .content_top_left {
   display: table-cell;
   height: 100%;
-  background-color: red;
-}
-
-.content_top_right {
-  display: table-cell;
-  height: 100%;
-  background-color: teal;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
 .content_top_profile_image {
   display: table-cell;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 1.5rem;
 }
 
 .content_top_profile_name {
   display: table-cell;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  padding-left: 1rem;
+}
+
+.content_body {
+  padding-bottom: 1rem;
+}
+
+.content_body_text {
+  font-size: 1.1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.content_body_image {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.content_end {
+  display: table;
+  height: 5rem;
+}
+
+.content_end_column {
+  display: table-cell;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* padding-top: 0.5rem; */
+  padding-bottom: 1.5rem;
+  height: 100%;
+  width: 3.5rem;
+}
+
+.content_end_column_button {
+  height: 100%;
+  width: 100%;
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+
+.content_end_column_button:hover {
+  -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+  -moz-box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+  box-shadow: 0px 0px 0.5rem 0px rgba(143, 143, 143, 1);
+}
+
+.content_end_column_button:active {
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(143, 143, 143, 1);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(143, 143, 143, 1);
+  box-shadow: 0px 0px 0px 0px rgba(143, 143, 143, 1);
 }
