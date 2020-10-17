@@ -38,7 +38,7 @@ class ErrorPageNotFound extends React.Component {
                 to see if the link you're trying to open is correct.
               </p>
               {this.renderRedirect()}
-              <button onClick={this.setRedirect} className="button_1">
+              <button onClick={this.setRedirect} className="button">
                 Go to Home
               </button>
               <p></p>

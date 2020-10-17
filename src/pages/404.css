@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-.button_1 {
+.button {
   outline-width: 0rem;
   background-color: #007BFC;
   border-radius: 1rem;
@@ -35,14 +35,13 @@
   border-color: transparent;
   text-align: center;
   width: 20rem;
-  height: 4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
   font-size: 1.5rem;
   cursor: pointer;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
 }
 
-.button_1:hover {
+.button:hover {
   -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(143,143,143,1);
   -moz-box-shadow: 0px 0px 0.5rem 0px rgba(143,143,143,1);
   box-shadow: 0px 0px 0.5rem 0px rgba(143,143,143,1);
