@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import "./NavBar.css";
 import "../pages/Home";
 import { Link, useHistory } from "react-router-dom";
@@ -104,36 +105,40 @@ function DropDownButtons() {
 
   if (dropDown1Opened) {
     return (
-      <div>
-        <div className="navbar_container_3_column">
-          <button
-            className="navbar_round_icon_button_1"
-            onClick={() => {
-              setDropDown1Opened(false);
-              setDropDown2Opened(!dropDown2Opened);
-            }}
-          >
-            <ArrowDropDownIcon />
-          </button>
-        </div>
-        <div className="navbar_container_3_column">
-          <button
-            className="navbar_round_icon_button_1"
+      <>
+        <div>
+          <div className="navbar_container_3_column">
+            <button
+              className="navbar_round_icon_button_1"
+              onClick={() => {
+                setDropDown1Opened(false);
+                setDropDown2Opened(!dropDown2Opened);
+              }}
+            >
+              <ArrowDropDownIcon />
+            </button>
+          </div>
+          <div className="navbar_container_3_column">
+            <button
+              className="navbar_round_icon_button_1"
+              onClick={() => {
+                setDropDown1Opened(false);
+                setDropDown2Opened(false);
+              }}
+            >
+              <AddIcon />
+            </button>
+          </div>
+          <div
+            className="dropdown_closer"
             onClick={() => {
               setDropDown1Opened(false);
               setDropDown2Opened(false);
             }}
-          >
-            <AddIcon />
-          </button>
+          />
+          <DropDown1 />
         </div>
-        <DropDown1
-          onblur={() => {
-            setDropDown1Opened(false);
-            setDropDown2Opened(false);
-          }}
-        />
-      </div>
+      </>
     );
   } else {
     if (dropDown2Opened) {
@@ -161,7 +166,14 @@ function DropDownButtons() {
               <AddIcon />
             </button>
           </div>
-          <DropDown2 onblur={() => {}} />
+          <div
+            className="dropdown_closer"
+            onClick={() => {
+              setDropDown1Opened(false);
+              setDropDown2Opened(false);
+            }}
+          />
+          <DropDown2 />
         </div>
       );
     } else {
@@ -212,7 +224,7 @@ function ProfileButton() {
   // else: return <></>
 }
 
-function DropDown1(props) {
+function DropDown1() {
   if (window.innerWidth > 750) {
     return (
       <>
@@ -222,7 +234,6 @@ function DropDown1(props) {
             top: "5rem",
             right: "4.5rem",
           }}
-          onBlur={props.onblur}
         >
           <Link to="/new/collection" style={{ textDecoration: "none" }}>
             <div className="navbar_dropdown_button">
