@@ -16,62 +16,46 @@ import "../firebase";
 import firebase from "firebase";
 
 function NavBar(props) {
+  // const [showHome, setShowHome] = useState(props.home);
+  // const [showExplore, setShowExplore] = useState(props.explore);
+
+  // useHistory().listen((location) => {
+  //   if (location.pathname !== "/home" && location.pathname !== "/explore") {
+  //     setShowHome(false);
+  //     setShowExplore(false);
+  //   }
+  // });
+
   return (
     <>
       <div className="navbar">
         <div className="navbar_container_1">
           <div className="navbar_name"></div>
         </div>
-        <Container2 home={props.home} explore={props.explore} />
+        <>
+          <div className="navbar_container_2">
+            <div className="navbar_menu">
+              <div className="navbar_menu_child">
+                <Link to="/home">
+                  <button className="navbar_icon_button">
+                    <HomeButton on={props.home} />
+                  </button>
+                </Link>
+              </div>
+              <div className="navbar_menu_child">
+                <Link to="/explore">
+                  <button className="navbar_icon_button">
+                    <ExploreButton on={props.explore} />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
         <div className="navbar_container_3"></div>
       </div>
       <NavBarActionButtons />
     </>
-  );
-}
-
-function Container2(props) {
-  const [showHome, setShowHome] = useState(props.home);
-  const [showExplore, setShowExplore] = useState(props.explore);
-
-  useHistory().listen((location) => {
-    if (location.pathname !== "/home" && location.pathname !== "/explore") {
-      setShowHome(false);
-      setShowExplore(false);
-    }
-  });
-
-  return (
-    <div className="navbar_container_2">
-      <div className="navbar_menu">
-        <div className="navbar_menu_child">
-          <Link
-            to="/home"
-            onClick={() => {
-              setShowHome(true);
-              setShowExplore(false);
-            }}
-          >
-            <button className="navbar_icon_button">
-              <HomeButton on={showHome} />
-            </button>
-          </Link>
-        </div>
-        <div className="navbar_menu_child">
-          <Link
-            to="/explore"
-            onClick={() => {
-              setShowHome(false);
-              setShowExplore(true);
-            }}
-          >
-            <button className="navbar_icon_button">
-              <ExploreButton on={showExplore} />
-            </button>
-          </Link>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -220,7 +204,8 @@ function ProfileButton() {
       </Link>
     </div>
   );
-  // else: return <></>
+  //if profile url is null
+  // return <></>
 }
 
 function DropDown1() {

@@ -22,30 +22,22 @@ class ErrorPageNotFound extends React.Component {
   render() {
     return (
       <>
-        <html>
-          <head>
-            <title>404 | Atrable</title>
-            <style media="screen"></style>
-          </head>
-          <body>
-            <div className="message">
-              <span role="img" aria-label="">
-                🤔
-              </span>
-              <h1>This Page Isn't Available</h1>
-              <p>
-                The link may be broken, or the page may have been removed. Check
-                to see if the link you're trying to open is correct.
-              </p>
-              {this.renderRedirect()}
-              <button onClick={this.setRedirect} className="button">
-                Go to Home
-              </button>
-              <p></p>
-            </div>
-            <p>Temporary 404 page</p>
-          </body>
-        </html>
+        <div className="message">
+          <span role="img" aria-label="">
+            🤔
+          </span>
+          <h1>This Page Isn't Available</h1>
+          <p>
+            The link may be broken, or the page may have been removed. Check to
+            see if the link you're trying to open is correct.
+          </p>
+          {this.renderRedirect()}
+          <button onClick={this.setRedirect} className="button">
+            Go to Home
+          </button>
+          <p></p>
+        </div>
+        <p>Temporary 404 page</p>
       </>
     );
   }
