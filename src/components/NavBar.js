@@ -16,16 +16,6 @@ import "../firebase";
 import firebase from "firebase";
 
 function NavBar(props) {
-  // const [showHome, setShowHome] = useState(props.home);
-  // const [showExplore, setShowExplore] = useState(props.explore);
-
-  // useHistory().listen((location) => {
-  //   if (location.pathname !== "/home" && location.pathname !== "/explore") {
-  //     setShowHome(false);
-  //     setShowExplore(false);
-  //   }
-  // });
-
   return (
     <>
       <div className="navbar">
@@ -280,14 +270,22 @@ function DropDown2() {
           right: "0.5rem",
         }}
       >
-        <Link to="/us/review" style={{ textDecoration: "none" }}>
+        <Link to="/my/posts" style={{ textDecoration: "none" }}>
+          <div className="navbar_dropdown_button">
+            <div className="navbar_dropdown_button_icon">
+              <StarIcon />
+            </div>
+            <div className="navbar_dropdown_button_title">My posts</div>
+          </div>
+        </Link>
+        {/* <Link to="/us/review" style={{ textDecoration: "none" }}>
           <div className="navbar_dropdown_button">
             <div className="navbar_dropdown_button_icon">
               <StarIcon />
             </div>
             <div className="navbar_dropdown_button_title">Rate us</div>
           </div>
-        </Link>
+        </Link> */}
         <LogOutButton />
       </div>
     );

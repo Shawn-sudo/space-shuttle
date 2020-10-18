@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import firebase from "firebase";
 import "../../firebase";
 import "./MainHome.css";
@@ -38,14 +38,12 @@ function MainHome() {
           </div>
           <div className="content_end">
             <div className="content_end_column">
-              <div className="content_end_column_button">
-                <FavoriteFilledIcon />
+              <div className="content_end_column_button" onClick={() => {}}>
+                <FavoriteOutlinedIcon />
               </div>
             </div>
             <div className="content_end_column">
-              <div className="content_end_column_button">
-                <FavoriteOutlinedIcon />
-              </div>
+              <div className="content_end_column_button"></div>
             </div>
           </div>
         </div>

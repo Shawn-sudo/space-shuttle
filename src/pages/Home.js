@@ -32,9 +32,9 @@ function Home() {
               <div className="column_left">
                 <div className="welcome">Built for you</div>
                 <div className="description">
-                  Atrable is a platform where you can share your travel stories.
-                  You can view traveler's stories, follow travelers, and share
-                  your travel story.
+                  Ipdago is a platform where you can share your stories. You can
+                  see other people's stories, follow the people, and share your
+                  stories.
                 </div>
               </div>
               <div className="column_right">

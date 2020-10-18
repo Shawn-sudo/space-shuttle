@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import firebase from "firebase";
 import "../../firebase";
+import "./NewCollection.css"
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
 import VerifyEmail from "../../components/VerifyEmail";

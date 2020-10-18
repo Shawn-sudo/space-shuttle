@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch, useHistory, useLocation } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Home from "../pages/Home";
 import ErrorPageNotFound from "../pages/404";
 import MainHome from "../pages/main/MainHome";
@@ -61,6 +61,7 @@ function App() {
               <Route exact path="/explore" component={MainExplore} />
               <Route exact path="/new/collection" component={NewCollection} />
               <Route exact path="/new/story" component={NewStory} />
+              <Route exact path="/my/posts" component={NewStory} />
               <Route exact path="/settings" component={Settings} />
               <Route exact path="/termsofuse" component={TermsOfUse} />
               <Route exact path="/me" component={Me} />
@@ -71,7 +72,11 @@ function App() {
       } else {
         return (
           <>
-            <VerifyEmail />
+            <NavBar />
+            <Switch>
+              <Route exact path="/termsofuse" component={TermsOfUse} />
+              <VerifyEmail />
+            </Switch>
           </>
         );
       }
@@ -81,6 +86,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/termsofuse" component={TermsOfUse} />
             <LoginToUse />
           </Switch>
         </>

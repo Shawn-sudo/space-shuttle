@@ -8,12 +8,23 @@ function VerifyEmail() {
   return (
     <div className="verifyemail_container">
       <div className="verifyemail_title">Verification email has been sent</div>
-      <div className="verifyemail_content">Please verify your email</div>
-      <button className="verifyemail_button" onClick={sendVerificationEmail}>Resend verification email</button>
+      <div className="verifyemail_content">Check your email</div>
+      <button className="verifyemail_button" onClick={sendVerificationEmail}>
+        Resend verification email
+      </button>
+      <button
+        className="verifyemail_button_white"
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        I've verified my email
+      </button>
+      <p>Logged in with {firebase.auth().currentUser.email}</p>
     </div>
   );
   function sendVerificationEmail() {
-    firebase.auth().currentUser.sendEmailVerification()
+    firebase.auth().currentUser.sendEmailVerification();
   }
 }
 
