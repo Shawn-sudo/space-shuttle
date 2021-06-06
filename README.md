@@ -1,3 +1,8 @@
+I made this when I was using Github for the first time
+===
+
+
+
 * new: new function
 * edit: edit a function (similar with "fix")
 * fix: fix bug
