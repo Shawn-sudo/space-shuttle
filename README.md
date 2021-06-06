@@ -2,12 +2,15 @@ I made this when I was using Github for the first time
 ===
 
 
+Just a note for me
+===
 
 * new: new function
 * edit: edit a function (similar with "fix")
 * fix: fix bug
 * style: change code format, semi-colon, etc.
 * etc: files in src (source) folder not changed: build, deploy, etc.
+*:) = 
 
 src/firebase.js not included
 ===
